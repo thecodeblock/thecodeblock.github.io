@@ -1,0 +1,131 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,400,900,600);
+ * {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Raleway", sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #064ba8;
+}
+.content-slider {
+    margin: 50px auto;
+    max-width: 400px;
+}
+#slider figure {
+    position: relative;
+}
+#slider figure img {
+    position: relative;
+    top: 0px;
+}
+#slider figure figcaption {
+    padding-top: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(59, 57, 0, 0.48);
+    background-image: -webkit-linear-gradient(-270deg, rgba(59, 57, 0, 0.48) 0%, rgba(0, 0, 0, 0.31) 50%, rgba(0, 55, 159, 0.53) 100%);
+    background-image: linear-gradient(0deg, rgba(59, 57, 0, 0.48) 0%, rgba(0, 0, 0, 0.31) 50%, rgba(0, 55, 159, 0.53) 100%);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#slider figure figcaption .detail {
+    text-transform: uppercase;
+    font-size: 44px;
+    font-size: 2.75rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -ms-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+    transform: translateY(-50px);
+}
+#slider figure figcaption .detail strong {
+    font-weight: 800;
+}
+#slider figure figcaption .button {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.53);
+    padding: 15px 10px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+#slider figure figcaption:hover,
+#slider figure figcaption:focus {
+    background-color: rgba(59, 57, 0, 0.63);
+    background-image: -webkit-linear-gradient(-270deg, rgba(59, 57, 0, 0.63) 0%, rgba(0, 0, 0, 0.31) 50%, rgba(0, 55, 159, 0.67) 100%);
+    background-image: linear-gradient(0deg, rgba(59, 57, 0, 0.63) 0%, rgba(0, 0, 0, 0.31) 50%, rgba(0, 55, 159, 0.67) 100%);
+}
+#slider figure figcaption:hover .detail,
+#slider figure figcaption:focus .detail {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+}
+#slider figure figcaption:hover .button,
+#slider figure figcaption:focus .button {
+    visibility: visible;
+    opacity: 1;
+}
+.flexslider {
+    margin-bottom: 0;
+}
+#carousel li {
+    cursor: pointer;
+    position: relative;
+}
+#carousel li:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.53);
+    z-index: 100;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#carousel li.flex-active-slide:before {
+    background: rgba(0, 0, 0, 0.15);
+}
+.flex-direction-nav li {
+    display: inline-block;
+    width: 50%;
+}
+.flex-direction-nav li a {
+    display: block;
+    padding: 5px 10px;
+    font-size: 24px;
+    background: #222;
+    color: #fff;
+}
+.flex-direction-nav li a:hover {
+    background: #ccc;
+    color: #222;
+}
+.flex-direction-nav .flex-next {
+    text-align: right;
+}
+/*# sourceMappingURL=style.css.map */
