@@ -1,0 +1,251 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,800,700,600,300);
+@import 'bourbon/bourbon';
+@import 'susy/susy';
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/layout';
+
+$susy:(
+    container:1200px,
+    columns: 12
+);
+ * {
+    box-sizing: border-box;
+}
+.hideScrollbar{
+    overflow-y: hidden;
+}
+body {
+    font-family: $primary-font;
+    height: 1000px;
+}
+a {
+    text-decoration: none;
+    color: $link;
+}
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    a {
+        color: #fff;
+    }
+    nav {
+        height: 400px;
+        height: 100%;
+        width: 100%;
+        .nav-logo {
+            text-align: center;
+            .logo {
+                height: 100px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+                fill: red;
+            }
+        }
+        .nav-main {
+            @include container(); //susy 
+            @include padding(10px);
+            .item {
+                margin-bottom: gutter();
+                @include media(medium){
+                    @include gallery(4 of 12);
+                }
+                h2 {
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    @include font-size(36px);
+                    padding: 10px 0;
+                    border-bottom: 2px solid #fff;
+                    margin-bottom: 10px;
+                }
+                ul {
+                    li {
+                        @include font-size(24px);
+                        font-weight: 700;
+                        line-height: 1.4;
+                        &.submenu {
+                            ul {
+                                li {
+                                    font-weight: 400;
+                                    @include font-size(18px);
+                                    padding-left: 1.6em;
+                                    background-image: url(../img/arrow12.svg);
+                                    background-repeat: no-repeat;
+                                    background-position: left;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .newsletter {
+                .letterForm {
+                    input{
+                        margin-bottom: 8px;
+                        color: #fff;
+                        font-weight: 700;
+                        padding: 10px;
+                        @include font-size(18px);
+                    }
+                    label{
+                        padding: 10px;
+                        @include font-size(18px);
+                        font-weight: 700;
+                        display: inline-block;
+                    }
+                    input[type=text],
+                    input[type=email]{
+                        width: 100%;
+                        background: rgba(255, 255, 255, 0.15);
+                        border: none;
+                    }
+                    select{
+                        width: 100%; 
+                        padding: 10px;
+                        @include font-size(18px);
+                        font-weight: 700;
+                        background: rgba(255, 255, 255, 0.15);
+                        border: none;
+                        margin-bottom: 8px;
+                        color: #fff;
+                        option{
+                            color: #000;
+                        }
+                    }
+                    .radio{
+                        padding: 10px;
+                        @include font-size(18px);
+                        font-weight: 700;
+                        input[type=radio]{
+                            margin-bottom: 0;
+                        }
+                        label{
+                            margin-right: 10px;
+                        }
+                    }
+                    input[type=submit]{
+                        width: 100%;
+                        background: #064ba8;
+                        border: 0;
+                        cursor: pointer;
+                        @include transition(all 0.3s ease);
+                        &:hover{
+                            background: #111; 
+                        }
+                    }
+                }
+            }
+            .contact{
+                @include font-size(14px);
+                line-height: 1.4;
+                margin-bottom: 20px;
+            }
+            .social{
+                ul{
+                    li{
+                        display: inline-block;
+                        @include font-size(24px);
+                        text-align: center;
+                        margin-right: 4px;
+                        a{
+                            border-radius: 50%;
+                            border: 2px solid #fff;
+                            background: rgba(255, 255, 255, 0.15);
+                            display: block;
+                            padding-top: 6px;
+                            width: 48px;
+                            height: 48px;
+                            @include transition(all 0.3s ease);
+                            &:hover{
+                                background: $link; 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    &.close{
+        height: 0;
+        margin-right: 15px;
+        nav{
+            display: none;
+        }
+    }
+}
+.nav-foot{
+    height: 300px;
+}
+.main {
+    height: 1500px;
+    background-image: url(../img/light-sky-beach-sand.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    
+}
+.blurred {
+    -webkit-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px);
+}
+
+.burger-trigger{
+    position: fixed;
+    background: #000;
+    top: 20%;
+    right: 0px;
+    z-index: 999999;
+    padding: 10px 35px 16px 0px;
+    padding: 20px 50px 25px 10px;
+    cursor: pointer;
+    span,
+    span:after,
+    span:before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 3px;
+        border-radius: 1px;
+        background: #6ea3ea;
+        cursor: pointer;    
+    }
+    span{
+        &:before{
+            top: -8px;
+        }
+        &:after{
+            bottom: -8px;
+        }
+    }
+    &.active{
+        span{
+            background: transparent;
+            &:after,
+            &:before{
+                top: 0;
+                background: #fff;
+            }
+            &:before{
+                @include transform(rotate(45deg));
+            }
+            &:after{
+                top: 10px;
+                @include transform(translateY(-10px) rotate(-45deg));
+            }
+        }
+    }
+}

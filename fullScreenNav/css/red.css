@@ -1,0 +1,146 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,800,700,600,300);
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  background: #f85656; }
+  header::-webkit-scrollbar {
+    display: none; }
+  header a {
+    color: #fff; }
+  header nav {
+    height: 400px;
+    text-align: center;
+    display: table;
+    height: 100%;
+    width: 100%; }
+    header nav .nav-logo {
+      position: fixed;
+      width: 100%;
+      text-align: left; }
+      @media only screen and (min-width: 768px) {
+        header nav .nav-logo {
+          text-align: center; } }
+      header nav .nav-logo .logo {
+        height: 40px;
+        width: 70px;
+        margin-top: 20px;
+        -webkit-transition: all 0.3s 150ms ease;
+        -moz-transition: all 0.3s 150ms ease;
+        transition: all 0.3s 150ms ease;
+        fill: #fff; }
+        @media only screen and (min-width: 768px) {
+          header nav .nav-logo .logo {
+            height: 50px; } }
+    header nav .nav-main {
+      display: table-cell;
+      vertical-align: middle; }
+      header nav .nav-main li {
+        visibility: visible;
+        opacity: 1;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-size: 1.125rem; }
+        @media only screen and (min-width: 480px) {
+          header nav .nav-main li {
+            font-size: 24px;
+            font-size: 1.5rem; } }
+        @media only screen and (min-width: 768px) {
+          header nav .nav-main li {
+            font-size: 36px;
+            font-size: 2.25rem; } }
+        header nav .nav-main li a {
+          display: inline-block;
+          padding: 25px 15px;
+          position: relative;
+          -webkit-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          transition: all 0.3s ease; }
+          header nav .nav-main li a:after {
+            content: "";
+            height: 0;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-bottom: 2px solid #fff; }
+        header nav .nav-main li:hover a {
+          color: #9f0000; }
+          header nav .nav-main li:hover a:after {
+            border-bottom-style: dotted; }
+  header.close {
+    overflow: hidden;
+    height: 4px; }
+    header.close nav .nav-logo .logo {
+      fill: #f85656; }
+    header.close nav .nav-main li {
+      visibility: hidden;
+      opacity: 0;
+      -webkit-transition: all 150ms ease-in;
+      -moz-transition: all 150ms ease-in;
+      transition: all 150ms ease-in; }
+
+.main {
+  height: 2000px; }
+
+.burger-trigger {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 999999;
+  padding: 10px 35px 16px 0px;
+  cursor: pointer; }
+  .burger-trigger span,
+  .burger-trigger span:after,
+  .burger-trigger span:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 4px;
+    border-radius: 1px;
+    background: #f85656;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .burger-trigger span:before {
+    top: -10px; }
+  .burger-trigger span:after {
+    bottom: -10px; }
+  .burger-trigger.active span {
+    background: transparent; }
+    .burger-trigger.active span:after, .burger-trigger.active span:before {
+      top: 0;
+      background: #fff; }
+    .burger-trigger.active span:before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .burger-trigger.active span:after {
+      top: 10px;
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      -moz-transform: translateY(-10px) rotate(-45deg);
+      -ms-transform: translateY(-10px) rotate(-45deg);
+      -o-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg); }
+
+/*# sourceMappingURL=red.css.map */

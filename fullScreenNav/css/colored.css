@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+* {
+  box-sizing: border-box; }
+
+.hideScrollbar {
+  overflow-y: hidden; }
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #000b27; }
+
+a {
+  text-decoration: none;
+  color: #064ba8; }
+
+.logo {
+  float: right; }
+
+.full-screen {
+  position: fixed;
+  background: #88aee2;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .full-screen nav {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center; }
+    .full-screen nav ul {
+      font-size: 44px; }
+      .full-screen nav ul a {
+        color: #333;
+        display: inline-block;
+        -webkit-transition: color 0.2s ease;
+        -moz-transition: color 0.2s ease;
+        transition: color 0.2s ease; }
+        .full-screen nav ul a:hover, .full-screen nav ul a:focus {
+          color: #fff; }
+      .full-screen nav ul li {
+        margin-bottom: 15px; }
+
+/* burger trigger menu */
+.menu-trigger {
+  background: #000;
+  z-index: 999999;
+  padding: 20px 30px 25px 10px;
+  max-width: 40px;
+  cursor: pointer;
+  position: relative;
+  float: left;
+  margin: 30px 0; }
+  .menu-trigger span,
+  .menu-trigger span:after,
+  .menu-trigger span:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 3px;
+    border-radius: 1px;
+    background: #6ea3ea;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .menu-trigger span:before {
+    top: -8px; }
+  .menu-trigger span:after {
+    bottom: -8px; }
+  .menu-trigger.active span {
+    background: transparent; }
+    .menu-trigger.active span:after, .menu-trigger.active span:before {
+      top: 0;
+      background: #fff; }
+    .menu-trigger.active span:before {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
+    .menu-trigger.active span:after {
+      top: 10px;
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      -moz-transform: translateY(-10px) rotate(-45deg);
+      -ms-transform: translateY(-10px) rotate(-45deg);
+      -o-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg); }
+
+/*# sourceMappingURL=colored.css.map */

@@ -1,0 +1,167 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,800,700,600,300);
+@import 'bourbon/bourbon';
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/layout';
+@import '../partials/burger-trigger';
+
+* {box-sizing: border-box; }
+
+body{
+    font-family: $primary-font;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    @include transition(all 0.3s ease);
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    background: #f85656;
+    a{
+        color: #fff;
+    }
+    nav{
+        height: 400px;
+        text-align: center;
+        display: table;
+        height: 100%;
+        width: 100%;
+        .nav-logo{
+            position: fixed;
+            width: 100%;
+            text-align: left;
+            @include media(medium){
+                text-align: center;
+            }
+            .logo{
+                height: 40px;
+                width: 70px;
+                @include media(medium){
+                    height: 50px;
+                }
+                margin-top: 20px;
+                @include transition(all 0.3s 150ms ease);
+                fill: #fff;
+            }            
+        }
+        .nav-main{
+            display: table-cell;
+            vertical-align: middle;
+            li{
+                visibility: visible;
+                opacity: 1;
+                font-weight: 900;
+                text-transform: uppercase;
+                @include font-size(18px);
+                @include media(small){
+                    @include font-size(24px);
+                }
+                @include media(medium){
+                    @include font-size(36px);
+                }
+                a{                    
+                    display: inline-block;
+                    padding: 25px 15px;
+                    position: relative;
+                    &:after{
+                        content: "";
+                        height: 0;
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        border-bottom: 2px solid #fff;
+                    }
+                    @include transition(all 0.3s ease);
+                }
+                &:hover{
+                    a{
+                        color: #9f0000;
+                        &:after{
+                            border-bottom-style: dotted;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.close{
+        overflow: hidden;
+        height: 4px;
+         nav{
+            .nav-logo{
+                .logo{
+                    fill:#f85656;
+                }
+            }
+            .nav-main{
+                li{
+                    visibility: hidden;
+                    opacity: 0;
+                    @include transition(all 150ms ease-in);
+                }
+            }
+         }
+    }
+}
+
+.main{
+    height: 2000px;
+}
+
+.burger-trigger{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 999999;
+    padding: 10px 35px 16px 0px;
+    cursor: pointer;
+    span,
+    span:after,
+    span:before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 4px;
+        border-radius: 1px;
+        background: #f85656;
+        cursor: pointer;    
+        @include transition(all 0.3s ease);
+    }
+    span{
+        &:before{
+            top: -10px;
+        }
+        &:after{
+            bottom: -10px;
+        }
+    }
+    &.active{
+        span{
+            background: transparent;
+            &:after,
+            &:before{
+                top: 0;
+                background: #fff;
+            }
+            &:before{
+                @include transform(rotate(45deg));
+            }
+            &:after{
+                top: 10px;
+                @include transform(translateY(-10px) rotate(-45deg));
+            }
+        }
+    }
+}
+

@@ -1,0 +1,47 @@
+.nav-buttons{
+    margin-bottom: 0;
+    padding: 15px;
+    text-align: center;
+    color: #666;
+}
+.nav-buttons.dark{
+    color: #fff;
+}
+.nav-buttons h1{
+    font-size: 32px;
+    margin: 30px 0;
+    margin-top: 150px;
+    line-height: 1.4;
+}
+.nav-buttons li{
+    display: inline-block;
+}
+.nav-buttons li.active a{
+    display: inline-block;
+    background: #0a1d4e;
+}
+.nav-buttons.dark li.active a{
+    background: #0a1d4e;    
+}
+.nav-buttons li a{
+    display: inline-block;
+    padding: 10px 15px;;
+    color: #fff;
+    text-decoration: none;
+    background: #333;
+}
+.nav-buttons.dark li a{
+    background: transparent;
+}
+.nav-buttons .back-link a{
+    display: inline-block;
+    background: #0a1d4e;
+    color: #fff;
+    margin: 15px 0;
+    padding: 10px 30px;
+    margin-top: 100px;
+}
+.nav-buttons .back-link a svg{
+    vertical-align: text-bottom;
+    margin-right: 10px;
+}

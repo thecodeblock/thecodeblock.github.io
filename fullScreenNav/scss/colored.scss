@@ -1,0 +1,110 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import 'bourbon/bourbon';
+@import 'susy/susy';
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/layout';
+$susy:(
+    container:1200px,
+    columns: 12
+);
+* {
+    box-sizing: border-box;
+}
+.hideScrollbar{
+    overflow-y: hidden;
+}
+body{
+    font-family: $primary-font;
+    background: #000b27;
+}
+a{
+    text-decoration: none;
+    color: $link;
+}
+
+.logo{
+    float: right;
+}
+
+.full-screen{
+    position: fixed;
+    background: #88aee2;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(all 0.2s ease);
+    nav{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        ul{
+            font-size: 44px;
+            a{
+                color: #333;
+                display: inline-block;
+                @include transition(color 0.2s ease);
+                &:hover,
+                &:focus{
+                    color: #fff;
+                }
+            }
+            li{
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+/* burger trigger menu */
+.menu-trigger{
+    background: #000;
+    z-index: 999999;
+    padding: 20px 30px 25px 10px;
+    max-width: 40px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    margin: 30px 0;
+    span,
+    span:after,
+    span:before{
+        content: '';
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 3px;
+        border-radius: 1px;
+        background: #6ea3ea;
+        cursor: pointer;
+        @include transition(all 0.3s ease);
+    }
+    span{
+        &:before{
+            top: -8px;
+        }
+        &:after{
+            bottom: -8px;
+        }
+    }
+    &.active{
+        span{
+            background: transparent;
+            &:after,
+            &:before{
+                top: 0;
+                background: #fff;
+            }
+            &:before{
+                @include transform(rotate(45deg));
+            }
+            &:after{
+                top: 10px;
+                @include transform(translateY(-10px) rotate(-45deg));
+            }
+        }
+    }
+}
