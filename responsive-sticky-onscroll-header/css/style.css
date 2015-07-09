@@ -1,0 +1,170 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+html * {
+  margin-top: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale; }
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  -webkit-backface-visibility: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background: #fdbd10;
+  color: #2d1615;
+  -webkit-font-smoothing: antialiased; }
+  body ::selection {
+    background: #fdbd10;
+    /* WebKit/Blink Browsers */ }
+  body ::-moz-selection {
+    background: #fdbd10;
+    /* Gecko Browsers */ }
+
+a {
+  color: #fdbd10;
+  text-decoration: none; }
+
+.tcb-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.tcb-menu {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: #0066b2;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative; }
+  .tcb-menu:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .tcb-menu .logo {
+    height: 40px;
+    width: 100px;
+    background: #222; }
+  .tcb-menu-btn {
+    height: 40px;
+    width: 40px;
+    background: #fdbd10 url(../css/btn-hamburger.png) center no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer; }
+    @media only screen and (min-width: 768px) {
+      .tcb-menu-btn {
+        display: none; } }
+  .tcb-menu-items {
+    margin-top: 0;
+    height: 0;
+    overflow: hidden; }
+    .tcb-menu-items.open {
+      height: auto;
+      margin-top: 10px; }
+    .tcb-menu-items li {
+      text-align: center;
+      font-size: 18px;
+      font-size: 1.125rem;
+      font-weight: bold; }
+      .tcb-menu-items li a {
+        display: block;
+        padding: 10px; }
+  @media only screen and (min-width: 768px) {
+    .tcb-menu {
+      padding-top: 60px;
+      background: transparent; }
+      .tcb-menu .logo {
+        float: left;
+        height: 40px;
+        width: 160px; }
+      .tcb-menu-items {
+        margin-top: 0;
+        float: right;
+        height: auto; }
+        .tcb-menu-items.open {
+          margin-top: 0; }
+        .tcb-menu-items li {
+          font-size: 18px;
+          font-size: 1.125rem;
+          display: inline-block; }
+          .tcb-menu-items li a {
+            color: #222;
+            display: block;
+            padding: 10px; } }
+
+@media only screen and (min-width: 768px) {
+  .tcb-header.small {
+    background: #0066b2; }
+    .tcb-header.small .tcb-menu {
+      padding-top: 10px; }
+      .tcb-header.small .tcb-menu-items li a {
+        color: #fff; } }
+
+.hero {
+  min-height: 600px;
+  background-image: url(../img/black-and-white-nature-sky-field.jpg);
+  background-size: cover;
+  background-position: bottom; }
+
+/****************
+COMMON STYLES
+****************/
+.wrapper {
+  height: 2999px;
+  margin-top: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (min-width: 768px) {
+    .wrapper {
+      margin-top: 80px; } }
+  .wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .wrapper .details {
+    margin: 50px 0;
+    margin-top: 150px; }
+    .wrapper .details:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .wrapper .details h1 {
+      padding: 10px;
+      font-size: 32px;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+      font-weight: normal; }
+    .wrapper .details .back-link {
+      text-align: center; }
+      .wrapper .details .back-link a {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 15px 30px;
+        background: #444;
+        color: #fff;
+        border-radius: 24px; }
+        .wrapper .details .back-link a svg {
+          margin-right: 10px;
+          vertical-align: text-top;
+          display: inline-block; }
+
+/*# sourceMappingURL=style.css.map */
